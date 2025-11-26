@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: nmap-scanner
+    env: docker
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
+    healthCheckPath: /health
